@@ -10,7 +10,18 @@ url_sorteio = ["https://www.resultados-euromilhoes.com/resultados-euromilhoes-20
                "https://www.resultados-euromilhoes.com/resultados-euromilhoes-2018-2.html",
                "https://www.resultados-euromilhoes.com/resultados-euromilhoes-2017.html",
                "https://www.resultados-euromilhoes.com/resultados-euromilhoes-2017-2.html",
-               "https://www.resultados-euromilhoes.com/resultados-euromilhoes-2016.html"]
+               "https://www.resultados-euromilhoes.com/resultados-euromilhoes-2016.html",
+               "https://www.resultados-euromilhoes.com/resultados-euromilhoes-2016-2.html",
+               "https://www.resultados-euromilhoes.com/resultados-euromilhoes.html",
+               "https://www.resultados-euromilhoes.com/resultados-euromilhoes-2.html",
+               "https://www.resultados-euromilhoes.com/resultados-euromilhoes-2014.html",
+               "https://www.resultados-euromilhoes.com/resultados-euromilhoes-2014-2.html",
+               "https://www.resultados-euromilhoes.com/resultados-euromilhoes-2013.html",
+               "https://www.resultados-euromilhoes.com/resultados-euromilhoes-2013-2.html",
+               "https://www.resultados-euromilhoes.com/resultados-euromilhoes-2012.html",
+               "https://www.resultados-euromilhoes.com/resultados-euromilhoes-2012-2.html",
+               "https://www.resultados-euromilhoes.com/resultados-euromilhoes-2011.html",
+               "https://www.resultados-euromilhoes.com/resultados-euromilhoes-2011-2.html"]
 
 for i in range(0, len(url_sorteio)):
     page = requests.get(url_sorteio[i], verify=False)
