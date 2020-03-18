@@ -2,6 +2,9 @@ import requests
 import re
 from bs4 import BeautifulSoup
 
+import urllib3
+urllib3.disable_warnings()
+
 datas = []
 lista_numeros = []
 lista_estrelas = []
@@ -28,13 +31,13 @@ for i in range(0, len(url_sorteio)):
     page = requests.get(url_sorteio[i], verify=False)
     page_content = page.text
 
-    soup = BeautifulSoup(page_content)
+    soup = BeautifulSoup(page_content, "html.parser")
 
     resultados = soup.find(id="nav_menuLot")
     itens = list(resultados.find_all(class_="lotitem"))
     for i in range(0, len(itens)):
         data = itens[i].find("a").text[:15]
-        data = re.match("(.*)(\d{2}-.*-\d{4})(.*)" , str(data))
+        data = re.match("(.*)(\d{2}-.*-\d{4})(.*)", str(data))
         if data:
             data = data.group(2)
             datas.append(data)
@@ -49,9 +52,12 @@ for i in range(0, len(url_sorteio)):
             num.append(numeros[i].text)
         for i in range(0, len(estrelas)):
             star.append(estrelas[i].text)
+        if numeros[0] == "?":
+            print("A ignorar o resultado com {}".format(numeros[0]))
+            continue
         lista_estrelas.append(star)
         lista_numeros.append(num)
-        print("\n")
+        #print("\n")
 
 import csv
 with open('sorteios.csv', 'w', newline='') as file:
