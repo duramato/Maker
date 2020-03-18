@@ -2,6 +2,13 @@ import csv
 from random import choices
 from collections import Counter
 
+def check_if_present(number, list):
+    if number in list:
+        print("O numero {} ja esta presente, a gerar outro.".format(number))
+        return True
+    else:
+        return False
+
 def gerar_sorteio():
 
     with open('sorteios.csv', newline='') as csvfile:
@@ -71,6 +78,10 @@ def gerar_sorteio():
     numeros = []
     for i in range(0, 5):
         numero = choices(lista_numeros, prob_numeros)[0]
+        check = check_if_present(numero, numeros)
+        while check == True:
+            numero = choices(lista_numeros, prob_numeros)[0]
+            check = check_if_present(numero, numeros)
         numeros.append(numero)
 
     print("Numeros:")
@@ -86,11 +97,16 @@ def gerar_sorteio():
     estrelas = []
     for i in range(0, 2):
         estrela = choices(lista_estrelas, prob_estrelas)[0]
+        check = check_if_present(estrela, estrelas)
+        while check == True:
+            estrela = choices(lista_estrelas, prob_estrelas)[0]
+            check = check_if_present(estrela, estrelas)
         estrelas.append(estrela)
 
     print("Estrelas:")
     print(tuple(estrelas))
 
 for i in range(0, 5):
+    print("----------------------------------------")
     gerar_sorteio()
-    print(" ")
+    print("----------------------------------------")

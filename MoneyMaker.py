@@ -6,7 +6,8 @@ datas = []
 lista_numeros = []
 lista_estrelas = []
 
-url_sorteio = ["https://www.resultados-euromilhoes.com/resultados-euromilhoes-2019.html",
+url_sorteio = ["https://www.resultados-euromilhoes.com/resultados-euromilhoes-2020.html",
+               "https://www.resultados-euromilhoes.com/resultados-euromilhoes-2019.html",
                "https://www.resultados-euromilhoes.com/resultados-euromilhoes-2018-2.html",
                "https://www.resultados-euromilhoes.com/resultados-euromilhoes-2017.html",
                "https://www.resultados-euromilhoes.com/resultados-euromilhoes-2017-2.html",
