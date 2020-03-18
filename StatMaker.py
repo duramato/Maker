@@ -4,7 +4,7 @@ from collections import Counter
 
 def check_if_present(number, list):
     if number in list:
-        print("O numero {} ja esta presente, a gerar outro.".format(number))
+        #print("O numero {} ja esta presente, a gerar outro.".format(number))
         return True
     else:
         return False
