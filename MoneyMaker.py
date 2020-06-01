@@ -52,8 +52,9 @@ for i in range(0, len(url_sorteio)):
             num.append(numeros[i].text)
         for i in range(0, len(estrelas)):
             star.append(estrelas[i].text)
-        if numeros[0] == "?":
-            print("A ignorar o resultado com {}".format(numeros[0]))
+        #print(numeros[0].text)
+        if numeros[0].text == "??":
+            print("A ignorar o resultado com {0} do dia {1}".format(numeros[0].text, data))
             continue
         lista_estrelas.append(star)
         lista_numeros.append(num)
